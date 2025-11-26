@@ -1,59 +1,44 @@
 <!DOCTYPE html><html lang="ru"><head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>ЭкоФиламент — Переработка пластика в филамент для 3D-принтера</title>
+    <title>ЭкоФиламент — Переработка пластика в филамент для 3D-печати</title>
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Школьный проект по переработке ПЭТ-бутылок в филамент для 3D-печати. Сдайте пластик и купите экологичный филамент в г. Алтай."/>
-    
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="ЭкоФиламент — Переработка пластика в филамент"/>
-    <meta property="og:description" content="Школьный проект по переработке ПЭТ-бутылок в филамент для 3D-печати. Сдайте пластик и купите экологичный филамент в г. Алтай."/>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="ЭкоФиламент — Переработка пластика в филамент для 3D-печати"/>
+    <meta property="og:description" content="Школьный проект превращает PET-бутылки в филамент для 3D-принтера. Сдавайте пластик и покупайте экологичный филамент."/>
     <meta property="og:url" content="https://www.onspace.ai"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:site_name" content="ЭкоФиламент"/>
-    <meta property="og:image" content="https://cdn-ai.onspace.ai/onspace/project/screenshot/online/pre-site/9be5yd.jpg"/>
+    <meta property="og:site_name" content="OnSpace.AI"/>
+    <meta property="og:image" content="https://cdn-ai.onspace.ai/onspace/project/screenshot/online/pre-site/9be5yb.jpg"/>
     <meta property="og:image:width" content="1200"/>
     <meta property="og:image:height" content="630"/>
     
-    <!-- Twitter Card Tags -->
+    <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" content="ЭкоФиламент — Переработка пластика в филамент"/>
-    <meta name="twitter:description" content="Школьный проект по переработке ПЭТ-бутылок в филамент для 3D-печати. Сдайте пластик и купите экологичный филамент в г. Алтай."/>
-    <meta name="twitter:image" content="https://cdn-ai.onspace.ai/onspace/project/screenshot/online/pre-site/9be5yd.jpg"/>
+    <meta name="twitter:title" content="ЭкоФиламент — Переработка пластика в филамент для 3D-печати"/>
+    <meta name="twitter:description" content="Школьный проект превращает PET-бутылки в филамент для 3D-принтера. Сдавайте пластик и покупайте экологичный филамент."/>
+    <meta name="twitter:image" content="https://cdn-ai.onspace.ai/onspace/project/screenshot/online/pre-site/9be5yb.jpg"/>
+    <meta name="twitter:url" content="https://www.onspace.ai"/>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        eco: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            200: '#bbf7d0',
-                            300: '#86efac',
-                            400: '#4ade80',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#166534',
-                            900: '#14532d',
-                        },
-                        earth: {
-                            50: '#faf8f5',
-                            100: '#f5f1ea',
-                            200: '#e8ddc8',
-                            300: '#d4c4a8',
-                            400: '#b8a67d',
-                            500: '#9d8b5e',
-                            600: '#7d6f4b',
-                            700: '#5f5639',
-                            800: '#47412c',
-                            900: '#2d2a1c',
-                        }
+                        'eco-dark': '#2D5016',
+                        'eco-primary': '#4A7C3A',
+                        'eco-light': '#7CB342',
+                        'eco-pale': '#C5E1A5',
+                        'earth': '#8D6E63',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
                     }
                 }
             }
@@ -61,1086 +46,771 @@
     </script>
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
         body {
             font-family: 'Inter', sans-serif;
         }
         
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+        .hero-gradient {
+            background: linear-gradient(135deg, #2D5016 0%, #4A7C3A 50%, #7CB342 100%);
         }
         
-        .eco-gradient {
-            background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+        .leaf-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0c0 16.569-13.431 30-30 30v30c16.569 0 30-13.431 30-30V0z' fill='%234A7C3A' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
         }
         
-        .earth-gradient {
-            background: linear-gradient(135deg, #d4c4a8 0%, #7d6f4b 100%);
+        .stat-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
-        .animated-float {
-            animation: float 6s ease-in-out infinite;
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(74, 124, 58, 0.2);
+        }
+        
+        .btn-eco {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-eco:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(74, 124, 58, 0.3);
+        }
+        
+        .product-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .product-card:hover {
+            border-color: #7CB342;
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(124, 179, 66, 0.2);
         }
         
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-10px); }
         }
         
-        .leaf-pattern {
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 10c-5 0-9 4-9 9 0 3 1 5 3 7-2 2-3 4-3 7 0 5 4 9 9 9s9-4 9-9c0-3-1-5-3-7 2-2 3-4 3-7 0-5-4-9-9-9z' fill='%2322c55e' fill-opacity='0.05'/%3E%3C/svg%3E");
+        .floating {
+            animation: float 3s ease-in-out infinite;
         }
         
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 50;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.5);
-        }
-        
-        .modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .form-input:focus {
+            border-color: #7CB342;
+            ring-color: rgba(124, 179, 66, 0.3);
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-eco-50 via-white to-earth-50 leaf-pattern">
-    
+<body class="bg-gray-50 text-gray-900">
+
     <!-- Navigation -->
-    <nav class="glass-effect fixed w-full top-0 z-40 shadow-lg">
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center space-x-2">
-                    <svg class="w-8 h-8 text-eco-600" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm1-13h-2v6h6v-2h-4z"></path>
-                    </svg>
-                    <span class="text-xl font-bold text-eco-800">ЭкоФиламент</span>
+                    <i class="fas fa-recycle text-eco-primary text-2xl"></i>
+                    <span class="text-xl font-bold text-eco-dark">ЭкоФиламент</span>
                 </div>
-                
-                <div class="hidden md:flex space-x-6">
-                    <a href="#about" class="text-gray-700 hover:text-eco-600 transition">О проекте</a>
-                    <a href="#submit-plastic" class="text-gray-700 hover:text-eco-600 transition">Сдать пластик</a>
-                    <a href="#buy-filament" class="text-gray-700 hover:text-eco-600 transition">Купить филамент</a>
-                    <a href="#contact" class="text-gray-700 hover:text-eco-600 transition">Контакты</a>
-                    <button onclick="authManager.showAuthModal()" class="text-eco-600 hover:text-eco-700 font-semibold transition">
-                        <span id="nav-auth-text">Вход для администратора</span>
-                    </button>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-eco-primary transition">О проекте</a>
+                    <a href="#impact" class="text-gray-700 hover:text-eco-primary transition">Воздействие</a>
+                    <a href="#donate" class="text-gray-700 hover:text-eco-primary transition">Сдать пластик</a>
+                    <a href="#shop" class="text-gray-700 hover:text-eco-primary transition">Купить филамент</a>
+                    <a href="#team" class="text-gray-700 hover:text-eco-primary transition">Команда</a>
                 </div>
-                
-                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
+                <button id="menuBtn" class="md:hidden text-eco-primary">
+                    <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-4 py-3 space-y-2">
-                <a href="#about" class="block text-gray-700 hover:text-eco-600">О проекте</a>
-                <a href="#submit-plastic" class="block text-gray-700 hover:text-eco-600">Сдать пластик</a>
-                <a href="#buy-filament" class="block text-gray-700 hover:text-eco-600">Купить филамент</a>
-                <a href="#contact" class="block text-gray-700 hover:text-eco-600">Контакты</a>
-                <button onclick="authManager.showAuthModal()" class="block w-full text-left text-eco-600 font-semibold">
-                    <span id="mobile-auth-text">Вход для администратора</span>
-                </button>
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 py-3 space-y-3">
+                <a href="#about" class="block text-gray-700 hover:text-eco-primary">О проекте</a>
+                <a href="#impact" class="block text-gray-700 hover:text-eco-primary">Воздействие</a>
+                <a href="#donate" class="block text-gray-700 hover:text-eco-primary">Сдать пластик</a>
+                <a href="#shop" class="block text-gray-700 hover:text-eco-primary">Купить филамент</a>
+                <a href="#team" class="block text-gray-700 hover:text-eco-primary">Команда</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-24 pb-16 px-4">
-        <div class="max-w-7xl mx-auto">
+    <section class="hero-gradient pt-24 pb-20 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="leaf-pattern w-full h-full"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                        Превращаем пластик в <span class="text-eco-600">будущее</span>
-                    </h1>
-                    <p class="text-lg md:text-xl text-gray-600 leading-relaxed">
-                        Школьный проект переработки ПЭТ-бутылок в филамент для 3D-печати. 
-                        Вместе создаём экологичное решение для нашего города.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <button onclick="scrollToSection(&#39;submit-plastic&#39;)" class="eco-gradient text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition">
-                            Сдать пластик
-                        </button>
-                        <button onclick="scrollToSection(&#39;buy-filament&#39;)" class="bg-white text-eco-600 px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition border-2 border-eco-600">
-                            Купить филамент
-                        </button>
+                    <div class="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm">
+                        <i class="fas fa-award mr-2"></i>Победитель конкурса Nxplorers
                     </div>
-                    
-                    <!-- Stats -->
-                    <div class="grid grid-cols-3 gap-4 pt-8">
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-eco-600">200+</div>
-                            <div class="text-sm text-gray-600">кг переработано</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-eco-600">50+</div>
-                            <div class="text-sm text-gray-600">участников</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-eco-600">1М ₸</div>
-                            <div class="text-sm text-gray-600">грант</div>
-                        </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                        Превращаем пластик в будущее
+                    </h1>
+                    <p class="text-lg md:text-xl text-white/90 leading-relaxed">
+                        Школьный проект, перерабатывающий PET-бутылки в филамент для 3D-принтера. 
+                        Присоединяйтесь к эко-движению в Алтае!
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#donate" class="btn-eco bg-white text-eco-primary px-8 py-4 rounded-lg font-semibold text-center hover:bg-gray-100">
+                            <i class="fas fa-hand-holding-heart mr-2"></i>Сдать пластик
+                        </a>
+                        <a href="#shop" class="btn-eco bg-eco-light text-white px-8 py-4 rounded-lg font-semibold text-center hover:bg-eco-primary">
+                            <i class="fas fa-shopping-cart mr-2"></i>Купить филамент
+                        </a>
                     </div>
                 </div>
+                <div class="floating hidden md:block">
+                    <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800&amp;h=600&amp;fit=crop" alt="3D printer filament" class="rounded-2xl shadow-2xl" loading="lazy"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-eco-dark mb-4">Проблема пластиковых отходов</h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    Пластик стал одной из самых серьёзных экологических угроз нашего времени
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="stat-card bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-xl text-center">
+                    <div class="text-5xl font-bold text-red-600 mb-2">350М</div>
+                    <div class="text-gray-700 font-medium">тонн пластика</div>
+                    <div class="text-sm text-gray-600 mt-2">производится ежегодно в мире</div>
+                </div>
                 
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800&amp;h=600&amp;fit=crop" alt="3D печать экологичным филаментом" class="rounded-3xl shadow-2xl animated-float"/>
-                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl">
-                        <div class="text-sm text-gray-600">Победитель конкурса</div>
-                        <div class="text-xl font-bold text-eco-600">Nxplorers 2024</div>
+                <div class="stat-card bg-gradient-to-br from-orange-50 to-orange-100 p-8 rounded-xl text-center">
+                    <div class="text-5xl font-bold text-orange-600 mb-2">9%</div>
+                    <div class="text-gray-700 font-medium">переработано</div>
+                    <div class="text-sm text-gray-600 mt-2">с 1950-х годов</div>
+                </div>
+                
+                <div class="stat-card bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl text-center">
+                    <div class="text-5xl font-bold text-blue-600 mb-2">8М</div>
+                    <div class="text-gray-700 font-medium">тонн в океан</div>
+                    <div class="text-sm text-gray-600 mt-2">попадает ежегодно</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Project Section -->
+    <section id="about" class="py-16 bg-gray-50 leaf-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=800&amp;h=600&amp;fit=crop" alt="Recycling device" class="rounded-2xl shadow-xl" loading="lazy"/>
+                </div>
+                <div class="space-y-6">
+                    <div class="inline-block bg-eco-pale px-4 py-2 rounded-full text-eco-dark font-semibold text-sm">
+                        О проекте
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-eco-dark">
+                        Инновационное решение для экологии
+                    </h2>
+                    <div class="space-y-4 text-gray-700 leading-relaxed">
+                        <p>
+                            <strong class="text-eco-primary">Цель:</strong> Создать доступное и надежное устройство для переработки PET-бутылок в филамент для 3D-печати, внедрить локальную систему сбора отходов и развить эко-сообщество.
+                        </p>
+                        <p>
+                            <strong class="text-eco-primary">Гипотеза:</strong> Прибор для переработки PET-бутылок в филамент обеспечит локальную, экономически оправданную и экологичную альтернативу первичному филаменту.
+                        </p>
+                        <p>
+                            <strong class="text-eco-primary">Новизна:</strong> Превращение ПЭТ-бутылок в филамент — инновационное решение, объединяющее устойчивое развитие и современные технологии.
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 pt-4">
+                        <div class="flex -space-x-2">
+                            <div class="w-10 h-10 rounded-full bg-eco-primary flex items-center justify-center text-white font-semibold">Н</div>
+                            <div class="w-10 h-10 rounded-full bg-eco-light flex items-center justify-center text-white font-semibold">Д</div>
+                        </div>
+                        <div class="text-sm text-gray-600">
+                            Создано ученицами 11 класса<br/>СШ №7 г. Алтай
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-16 px-4 bg-white">
-        <div class="max-w-7xl mx-auto">
+    <!-- Achievement Section -->
+    <section id="impact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-eco-dark to-eco-primary rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+                <div class="absolute right-0 top-0 opacity-10">
+                    <i class="fas fa-trophy text-9xl"></i>
+                </div>
+                <div class="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="inline-block bg-white/20 px-4 py-2 rounded-full text-sm mb-4">
+                            <i class="fas fa-star mr-2"></i>Достижение
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                            Призовое место на Nxplorers
+                        </h2>
+                        <p class="text-white/90 text-lg mb-6">
+                            Наш проект был представлен на конкурсе экологических инициатив Nxplorers в г. Астана и получил призовое место.
+                        </p>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border-2 border-white/30">
+                            <div class="text-5xl font-bold mb-2">1 000 000 ₸</div>
+                            <div class="text-white/80">Грант на развитие проекта</div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-start space-x-4">
+                            <i class="fas fa-tools text-2xl mt-1"></i>
+                            <div>
+                                <div class="font-semibold mb-1">Улучшение оборудования</div>
+                                <div class="text-sm text-white/80">Закупка современных компонентов</div>
+                            </div>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-start space-x-4">
+                            <i class="fas fa-chart-line text-2xl mt-1"></i>
+                            <div>
+                                <div class="font-semibold mb-1">Повышение качества</div>
+                                <div class="text-sm text-white/80">Оптимизация процесса переработки</div>
+                            </div>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-start space-x-4">
+                            <i class="fas fa-users text-2xl mt-1"></i>
+                            <div>
+                                <div class="font-semibold mb-1">Расширение участия</div>
+                                <div class="text-sm text-white/80">Развитие школьного эко-клуба</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donate Plastic Section -->
+    <section id="donate" class="py-16 bg-gradient-to-br from-eco-pale to-green-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">О нашем проекте</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Проект учениц 11-го класса СШ №7 г. Алтай, создающий экологичное решение проблемы пластиковых отходов
+                <i class="fas fa-hand-holding-heart text-5xl text-eco-primary mb-4"></i>
+                <h2 class="text-3xl md:text-4xl font-bold text-eco-dark mb-4">Сдать пластик на переработку</h2>
+                <p class="text-gray-600 text-lg">
+                    Помогите природе и получите благодарность от эко-сообщества! Мы принимаем PET-бутылки и другой пластик.
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-gradient-to-br from-eco-50 to-eco-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-                    <div class="w-12 h-12 eco-gradient rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2L2 7v10c0 5.5 3.8 10.7 10 12 6.2-1.3 10-6.5 10-12V7l-10-5zm0 18c-4.4 0-8-3.6-8-8V8.3l8-4.7 8 4.7V12c0 4.4-3.6 8-8 8z"></path>
-                        </svg>
+            <form id="donateForm" class="bg-white rounded-2xl shadow-xl p-6 md:p-8 space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Ваше имя *</label>
+                        <input type="text" required="" class="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2" placeholder="Введите имя"/>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Проблема</h3>
-                    <p class="text-gray-600">
-                        Ежегодно в мире производится 350 млн тонн пластика. 
-                        Переработано лишь 9% с 1950-х годов. В океаны попадает 1-8 млн тонн отходов.
-                    </p>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Телефон *</label>
+                        <input type="tel" required="" class="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2" placeholder="+7 (___) ___-__-__"/>
+                    </div>
                 </div>
                 
-                <div class="bg-gradient-to-br from-eco-50 to-eco-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-                    <div class="w-12 h-12 eco-gradient rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M9 2l-1.8 4H3v2h1.5l1.7 12.5c0 1.4 1.1 2.5 2.5 2.5h7c1.4 0 2.5-1.1 2.5-2.5L19.5 8H21V6h-4.2L15 2H9zm1.2 2h3.6l.9 2h-5.4l.9-2zM8.5 8h7l-1.6 12h-3.8L8.5 8z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Решение</h3>
-                    <p class="text-gray-600">
-                        Переработка ПЭТ-бутылок в филамент для 3D-печати. 
-                        Локальная система сбора и производство качественного материала.
-                    </p>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                    <input type="email" class="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2" placeholder="example@mail.com"/>
                 </div>
                 
-                <div class="bg-gradient-to-br from-eco-50 to-eco-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-                    <div class="w-12 h-12 eco-gradient rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"></path>
-                        </svg>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Тип пластика *</label>
+                    <select required="" class="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2">
+                        <option value="">Выберите тип</option>
+                        <option value="pet">PET-бутылки</option>
+                        <option value="hdpe">HDPE (жёсткий пластик)</option>
+                        <option value="mixed">Смешанный пластик</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Примерное количество *</label>
+                        <input type="text" required="" class="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2" placeholder="Например: 20 бутылок"/>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Результат</h3>
-                    <p class="text-gray-600">
-                        Грант 1 млн ₸ от Nxplorers. Школьный экоклуб. 
-                        Развитие лидерских качеств и экологических навыков учеников.
-                    </p>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Предпочтительная дата</label>
+                        <input type="date" class="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2"/>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Адрес *</label>
+                    <input type="text" required="" class="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2" placeholder="г. Алтай, улица, дом"/>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Комментарий</label>
+                    <textarea rows="3" class="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2" placeholder="Дополнительная информация"></textarea>
+                </div>
+                
+                <button type="submit" class="btn-eco w-full bg-eco-primary text-white py-4 rounded-lg font-semibold text-lg hover:bg-eco-dark">
+                    <i class="fas fa-paper-plane mr-2"></i>Отправить заявку
+                </button>
+                
+                <p class="text-sm text-gray-500 text-center">
+                    Мы свяжемся с вами в течение 24 часов для согласования деталей
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <i class="fas fa-shopping-bag text-5xl text-eco-primary mb-4"></i>
+                <h2 class="text-3xl md:text-4xl font-bold text-eco-dark mb-4">Купить эко-филамент</h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    Филамент из переработанных PET-бутылок для 3D-печати. Качественный, экологичный и доступный.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="bg-gradient-to-br from-eco-primary to-eco-light h-48 flex items-center justify-center">
+                        <i class="fas fa-cube text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">ЭкоПЭТ Базовый</h3>
+                                <p class="text-sm text-gray-500">PET-R филамент, 1.75 мм</p>
+                            </div>
+                            <div class="bg-eco-pale px-3 py-1 rounded-full">
+                                <span class="text-eco-dark font-bold text-sm">ЭКО</span>
+                            </div>
+                        </div>
+                        
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-eco-primary mr-2"></i>
+                                Вес: 500 г
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-eco-primary mr-2"></i>
+                                Диаметр: 1.75 мм ±0.05
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-eco-primary mr-2"></i>
+                                Цвет: натуральный
+                            </li>
+                        </ul>
+                        
+                        <div class="border-t pt-4">
+                            <div class="flex items-end justify-between mb-4">
+                                <div>
+                                    <div class="text-sm text-gray-500">Цена</div>
+                                    <div class="text-3xl font-bold text-eco-primary">2500 ₸</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-xs text-gray-400 line-through">4000 ₸</div>
+                                    <div class="text-xs text-green-600 font-semibold">Экономия 38%</div>
+                                </div>
+                            </div>
+                            <button onclick="orderProduct(&#39;ЭкоПЭТ Базовый&#39;, 2500)" class="btn-eco w-full bg-eco-primary text-white py-3 rounded-lg font-semibold hover:bg-eco-dark">
+                                <i class="fas fa-cart-plus mr-2"></i>Заказать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden border-4 border-eco-light relative">
+                    <div class="absolute top-4 right-4 bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-xs font-bold z-10">
+                        ПОПУЛЯРНЫЙ
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-700 h-48 flex items-center justify-center">
+                        <i class="fas fa-cubes text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">ЭкоПЭТ Премиум</h3>
+                                <p class="text-sm text-gray-500">PET-R филамент, 1.75 мм</p>
+                            </div>
+                            <div class="bg-eco-pale px-3 py-1 rounded-full">
+                                <span class="text-eco-dark font-bold text-sm">ЭКО</span>
+                            </div>
+                        </div>
+                        
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-eco-primary mr-2"></i>
+                                Вес: 1000 г
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-eco-primary mr-2"></i>
+                                Диаметр: 1.75 мм ±0.03
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-eco-primary mr-2"></i>
+                                Цвет: выбор из 5 цветов
+                            </li>
+                        </ul>
+                        
+                        <div class="border-t pt-4">
+                            <div class="flex items-end justify-between mb-4">
+                                <div>
+                                    <div class="text-sm text-gray-500">Цена</div>
+                                    <div class="text-3xl font-bold text-eco-primary">4500 ₸</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-xs text-gray-400 line-through">7500 ₸</div>
+                                    <div class="text-xs text-green-600 font-semibold">Экономия 40%</div>
+                                </div>
+                            </div>
+                            <button onclick="orderProduct(&#39;ЭкоПЭТ Премиум&#39;, 4500)" class="btn-eco w-full bg-eco-light text-white py-3 rounded-lg font-semibold hover:bg-eco-primary">
+                                <i class="fas fa-cart-plus mr-2"></i>Заказать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="bg-gradient-to-br from-purple-500 to-pink-500 h-48 flex items-center justify-center">
+                        <i class="fas fa-box text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">ЭкоПЭТ Набор</h3>
+                                <p class="text-sm text-gray-500">5 катушек по 500 г</p>
+                            </div>
+                            <div class="bg-eco-pale px-3 py-1 rounded-full">
+                                <span class="text-eco-dark font-bold text-sm">ЭКО</span>
+                            </div>
+                        </div>
+                        
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-eco-primary mr-2"></i>
+                                Общий вес: 2500 г
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-eco-primary mr-2"></i>
+                                Диаметр: 1.75 мм ±0.05
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-eco-primary mr-2"></i>
+                                5 разных цветов
+                            </li>
+                        </ul>
+                        
+                        <div class="border-t pt-4">
+                            <div class="flex items-end justify-between mb-4">
+                                <div>
+                                    <div class="text-sm text-gray-500">Цена</div>
+                                    <div class="text-3xl font-bold text-eco-primary">10 500 ₸</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-xs text-gray-400 line-through">18 000 ₸</div>
+                                    <div class="text-xs text-green-600 font-semibold">Экономия 42%</div>
+                                </div>
+                            </div>
+                            <button onclick="orderProduct(&#39;ЭкоПЭТ Набор&#39;, 10500)" class="btn-eco w-full bg-eco-primary text-white py-3 rounded-lg font-semibold hover:bg-eco-dark">
+                                <i class="fas fa-cart-plus mr-2"></i>Заказать
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <!-- Team -->
-            <div class="bg-gradient-to-br from-earth-50 to-earth-100 p-8 md:p-12 rounded-3xl">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Команда проекта</h3>
+            <div class="mt-12 bg-eco-pale rounded-2xl p-6 md:p-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-leaf text-eco-primary text-4xl"></i>
+                        <div>
+                            <h3 class="font-bold text-eco-dark text-lg">Каждая покупка помогает природе</h3>
+                            <p class="text-gray-600 text-sm">Вы спасаете планету и поддерживаете школьный эко-клуб</p>
+                        </div>
+                    </div>
+                    <div class="bg-white px-6 py-3 rounded-lg shadow-md">
+                        <div class="text-sm text-gray-500">Переработано бутылок</div>
+                        <div class="text-2xl font-bold text-eco-primary">2,847</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-eco-dark mb-4">Наша команда</h2>
+                <p class="text-gray-600 text-lg">
+                    Ученицы 11 класса, создающие экологичное будущее
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+                    <div class="w-24 h-24 bg-gradient-to-br from-eco-primary to-eco-light rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-white text-3xl font-bold">Н</span>
+                    </div>
+                    <h3 class="font-bold text-xl text-gray-900 mb-1">Авдеева Наталья</h3>
+                    <p class="text-gray-500 text-sm mb-3">Соавтор проекта</p>
+                    <p class="text-gray-600 text-sm">Ученица 11 класса СШ №7 г. Алтай</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+                    <div class="w-24 h-24 bg-gradient-to-br from-eco-light to-eco-pale rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-white text-3xl font-bold">Д</span>
+                    </div>
+                    <h3 class="font-bold text-xl text-gray-900 mb-1">Самойлова Дарья</h3>
+                    <p class="text-gray-500 text-sm mb-3">Соавтор проекта</p>
+                    <p class="text-gray-600 text-sm">Ученица 11 класса СШ №7 г. Алтай</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+                    <div class="w-24 h-24 bg-gradient-to-br from-earth to-amber-700 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-white text-3xl font-bold">Б</span>
+                    </div>
+                    <h3 class="font-bold text-xl text-gray-900 mb-1">Дарибаев Бауржан</h3>
+                    <p class="text-gray-500 text-sm mb-3">Руководитель</p>
+                    <p class="text-gray-600 text-sm">КГУ «СШ №7 г. Алтай», район Алтай</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-white rounded-2xl shadow-lg p-8">
+                <h3 class="text-2xl font-bold text-eco-dark mb-4 text-center">Школьный эко-клуб</h3>
                 <div class="grid md:grid-cols-3 gap-6">
                     <div class="text-center">
-                        <div class="w-20 h-20 bg-eco-200 rounded-full mx-auto mb-3 flex items-center justify-center">
-                            <span class="text-2xl font-bold text-eco-700">АН</span>
-                        </div>
-                        <h4 class="font-semibold text-gray-900">Авдеева Наталья</h4>
-                        <p class="text-sm text-gray-600">Ученица 11 класса</p>
+                        <i class="fas fa-users text-4xl text-eco-primary mb-3"></i>
+                        <div class="font-bold text-2xl text-gray-900">45+</div>
+                        <div class="text-gray-600">участников</div>
                     </div>
                     <div class="text-center">
-                        <div class="w-20 h-20 bg-eco-200 rounded-full mx-auto mb-3 flex items-center justify-center">
-                            <span class="text-2xl font-bold text-eco-700">СД</span>
-                        </div>
-                        <h4 class="font-semibold text-gray-900">Самойлова Дарья</h4>
-                        <p class="text-sm text-gray-600">Ученица 11 класса</p>
+                        <i class="fas fa-project-diagram text-4xl text-eco-primary mb-3"></i>
+                        <div class="font-bold text-2xl text-gray-900">12</div>
+                        <div class="text-gray-600">эко-проектов</div>
                     </div>
                     <div class="text-center">
-                        <div class="w-20 h-20 bg-earth-300 rounded-full mx-auto mb-3 flex items-center justify-center">
-                            <span class="text-2xl font-bold text-earth-800">ДБ</span>
-                        </div>
-                        <h4 class="font-semibold text-gray-900">Дарибаев Бауржан</h4>
-                        <p class="text-sm text-gray-600">Руководитель проекта</p>
+                        <i class="fas fa-seedling text-4xl text-eco-primary mb-3"></i>
+                        <div class="font-bold text-2xl text-gray-900">2.8т</div>
+                        <div class="text-gray-600">переработано</div>
                     </div>
                 </div>
-                <p class="text-center text-gray-600 mt-6">
-                    КГУ «Средняя школа № 7 г. Алтай» район Алтай
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Submit Plastic Section -->
-    <section id="submit-plastic" class="py-16 px-4">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Сдайте пластик</h2>
-                <p class="text-lg text-gray-600">
-                    Помогите нам переработать пластиковые отходы. Заполните форму, и мы свяжемся с вами
-                </p>
-            </div>
-            
-            <div class="glass-effect p-8 md:p-12 rounded-3xl shadow-2xl">
-                <form id="plastic-form" class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Ваше имя *</label>
-                            <input type="text" name="name" required="" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-eco-500 focus:outline-none transition"/>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Телефон *</label>
-                            <input type="tel" name="phone" required="" placeholder="+7 777 123 4567" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-eco-500 focus:outline-none transition"/>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Email (необязательно)</label>
-                        <input type="email" name="email" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-eco-500 focus:outline-none transition"/>
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Адрес *</label>
-                        <input type="text" name="address" required="" placeholder="г. Алтай, ул. Ленина 15" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-eco-500 focus:outline-none transition"/>
-                    </div>
-                    
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Тип пластика *</label>
-                            <select name="plastic_type" required="" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-eco-500 focus:outline-none transition">
-                                <option value="">Выберите тип</option>
-                                <option value="ПЭТ бутылки">ПЭТ бутылки</option>
-                                <option value="Смешанный пластик">Смешанный пластик</option>
-                                <option value="Другое">Другое</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Примерный вес *</label>
-                            <input type="text" name="estimated_weight" required="" placeholder="10-15 кг" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-eco-500 focus:outline-none transition"/>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Желаемая дата забора</label>
-                        <input type="date" name="pickup_date" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-eco-500 focus:outline-none transition"/>
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Дополнительная информация</label>
-                        <textarea name="notes" rows="3" placeholder="Любые дополнительные детали..." class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-eco-500 focus:outline-none transition"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="w-full eco-gradient text-white py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition">
-                        Отправить заявку
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Buy Filament Section -->
-    <section id="buy-filament" class="py-16 px-4 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Каталог филаментов</h2>
-                <p class="text-lg text-gray-600">
-                    Экологичный филамент из переработанных бутылок для вашего 3D-принтера
-                </p>
-            </div>
-            
-            <div id="filaments-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Filaments will be loaded here -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 px-4">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Заказать звонок</h2>
-                <p class="text-lg text-gray-600">
-                    Остались вопросы? Оставьте заявку, и мы свяжемся с вами
-                </p>
-            </div>
-            
-            <div class="glass-effect p-8 md:p-12 rounded-3xl shadow-2xl">
-                <form id="callback-form" class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Ваше имя *</label>
-                            <input type="text" name="name" required="" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-eco-500 focus:outline-none transition"/>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Телефон *</label>
-                            <input type="tel" name="phone" required="" placeholder="+7 777 123 4567" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-eco-500 focus:outline-none transition"/>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Удобное время</label>
-                        <select name="preferred_time" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-eco-500 focus:outline-none transition">
-                            <option value="">Любое время</option>
-                            <option value="Утро 9-12">Утро 9-12</option>
-                            <option value="День 12-15">День 12-15</option>
-                            <option value="Вечер 15-18">Вечер 15-18</option>
-                        </select>
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Сообщение</label>
-                        <textarea name="message" rows="4" placeholder="Ваш вопрос или комментарий..." class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-eco-500 focus:outline-none transition"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="w-full eco-gradient text-white py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition">
-                        Заказать звонок
-                    </button>
-                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
+    <footer class="bg-eco-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold mb-4">ЭкоФиламент</h3>
-                    <p class="text-gray-400">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-recycle text-2xl"></i>
+                        <span class="text-xl font-bold">ЭкоФиламент</span>
+                    </div>
+                    <p class="text-white/80 text-sm">
                         Школьный проект по переработке пластика в филамент для 3D-печати
                     </p>
                 </div>
+                
                 <div>
-                    <h4 class="font-semibold mb-4">Навигация</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#about" class="hover:text-eco-400 transition">О проекте</a></li>
-                        <li><a href="#submit-plastic" class="hover:text-eco-400 transition">Сдать пластик</a></li>
-                        <li><a href="#buy-filament" class="hover:text-eco-400 transition">Купить филамент</a></li>
-                        <li><a href="#contact" class="hover:text-eco-400 transition">Контакты</a></li>
+                    <h4 class="font-bold mb-4">Навигация</h4>
+                    <ul class="space-y-2 text-sm text-white/80">
+                        <li><a href="#about" class="hover:text-white transition">О проекте</a></li>
+                        <li><a href="#impact" class="hover:text-white transition">Достижения</a></li>
+                        <li><a href="#donate" class="hover:text-white transition">Сдать пластик</a></li>
+                        <li><a href="#shop" class="hover:text-white transition">Купить филамент</a></li>
                     </ul>
                 </div>
+                
                 <div>
-                    <h4 class="font-semibold mb-4">Контакты</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>СШ № 7 г. Алтай</li>
-                        <li>район Алтай</li>
-                        <li>Казахстан</li>
+                    <h4 class="font-bold mb-4">Контакты</h4>
+                    <ul class="space-y-2 text-sm text-white/80">
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>г. Алтай, СШ №7</li>
+                        <li><i class="fas fa-envelope mr-2"></i>ecofilament@school7.kz</li>
+                        <li><i class="fas fa-phone mr-2"></i>+7 (___) ___-__-__</li>
                     </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Присоединяйтесь</h4>
+                    <p class="text-sm text-white/80 mb-4">Следите за нашими достижениями</p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
-                <p>© 2024 ЭкоФиламент. Проект учениц СШ №7. Победитель Nxplorers.</p>
+            
+            <div class="border-t border-white/20 mt-8 pt-8 text-center text-sm text-white/60">
+                <p>© 2025 ЭкоФиламент. Проект СШ №7 г. Алтай. Все права защищены.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Auth Modal -->
-    <div id="auth-modal" class="modal">
-        <div class="bg-white rounded-3xl p-8 max-w-md w-full mx-4 shadow-2xl">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-bold text-gray-900">Вход для администратора</h3>
-                <button onclick="authManager.closeAuthModal()" class="text-gray-400 hover:text-gray-600">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-            </div>
-            
-            <form id="auth-form" class="space-y-4">
-                <div>
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
-                    <input type="email" name="email" required="" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-eco-500 focus:outline-none transition"/>
-                </div>
-                <div>
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Пароль</label>
-                    <input type="password" name="password" required="" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-eco-500 focus:outline-none transition"/>
-                </div>
-                <button type="submit" class="w-full eco-gradient text-white py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition">
-                    Войти
-                </button>
-            </form>
-            
-            <div id="auth-error" class="hidden mt-4 p-3 bg-red-50 text-red-600 rounded-xl text-sm"></div>
-        </div>
-    </div>
-
     <!-- Order Modal -->
-    <div id="order-modal" class="modal">
-        <div class="bg-white rounded-3xl p-8 max-w-2xl w-full mx-4 shadow-2xl max-h-[90vh] overflow-y-auto">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-bold text-gray-900">Заказать филамент</h3>
-                <button onclick="closeOrderModal()" class="text-gray-400 hover:text-gray-600">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-            </div>
+    <div id="orderModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 md:p-8 relative">
+            <button onclick="closeOrderModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
             
-            <div id="order-filament-info" class="mb-6 p-4 bg-eco-50 rounded-xl"></div>
+            <h3 class="text-2xl font-bold text-eco-dark mb-6">Оформить заказ</h3>
             
-            <form id="order-form" class="space-y-6">
-                <input type="hidden" name="filament_id" id="order-filament-id"/>
-                
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Ваше имя *</label>
-                        <input type="text" name="customer_name" required="" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-eco-500 focus:outline-none transition"/>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Телефон *</label>
-                        <input type="tel" name="phone" required="" placeholder="+7 777 123 4567" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-eco-500 focus:outline-none transition"/>
-                    </div>
+            <form id="orderForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Товар</label>
+                    <input type="text" id="orderProduct" readonly="" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg bg-gray-50"/>
                 </div>
                 
                 <div>
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
-                    <input type="email" name="email" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-eco-500 focus:outline-none transition"/>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Цена</label>
+                    <input type="text" id="orderPrice" readonly="" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg bg-gray-50"/>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Ваше имя *</label>
+                    <input type="text" required="" class="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2"/>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Телефон *</label>
+                    <input type="tel" required="" class="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2"/>
                 </div>
                 
                 <div>
                     <label class="block text-sm font-semibold text-gray-700 mb-2">Адрес доставки *</label>
-                    <input type="text" name="delivery_address" required="" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-eco-500 focus:outline-none transition"/>
+                    <input type="text" required="" class="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2"/>
                 </div>
                 
                 <div>
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Количество (кг) *</label>
-                    <input type="number" name="quantity" id="order-quantity" required="" min="1" value="1" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-eco-500 focus:outline-none transition" oninput="updateOrderTotal()"/>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Количество *</label>
+                    <input type="number" value="1" min="1" required="" class="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2"/>
                 </div>
                 
-                <div>
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Способ оплаты</label>
-                    <select name="payment_method" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-eco-500 focus:outline-none transition">
-                        <option value="Наличные">Наличные при получении</option>
-                        <option value="Перевод">Банковский перевод</option>
-                    </select>
-                </div>
-                
-                <div class="bg-eco-50 p-4 rounded-xl">
-                    <div class="flex justify-between items-center text-lg font-semibold">
-                        <span>Итого:</span>
-                        <span id="order-total" class="text-eco-600">0 ₸</span>
-                    </div>
-                </div>
-                
-                <button type="submit" class="w-full eco-gradient text-white py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition">
-                    Оформить заказ
+                <button type="submit" class="btn-eco w-full bg-eco-primary text-white py-4 rounded-lg font-semibold hover:bg-eco-dark">
+                    <i class="fas fa-check mr-2"></i>Подтвердить заказ
                 </button>
             </form>
         </div>
     </div>
 
-    <!-- Admin Panel -->
-    <div id="admin-panel" class="hidden fixed inset-0 bg-gray-900 text-white z-50 overflow-auto">
-        <div class="min-h-screen">
-            <!-- Admin Header -->
-            <div class="bg-gray-800 border-b border-gray-700 sticky top-0 z-10">
-                <div class="max-w-7xl mx-auto px-4 py-4">
-                    <div class="flex justify-between items-center">
-                        <h2 class="text-2xl font-bold">Панель администратора</h2>
-                        <button onclick="authManager.logout()" class="bg-red-600 hover:bg-red-700 px-6 py-2 rounded-lg transition">
-                            Выйти
-                        </button>
-                    </div>
-                    
-                    <!-- Tabs -->
-                    <div class="flex space-x-4 mt-4">
-                        <button onclick="switchAdminTab(&#39;plastic&#39;)" class="admin-tab px-4 py-2 rounded-lg bg-eco-600" data-tab="plastic">
-                            Заявки на пластик
-                        </button>
-                        <button onclick="switchAdminTab(&#39;orders&#39;)" class="admin-tab px-4 py-2 rounded-lg hover:bg-gray-700" data-tab="orders">
-                            Заказы филамента
-                        </button>
-                        <button onclick="switchAdminTab(&#39;callbacks&#39;)" class="admin-tab px-4 py-2 rounded-lg hover:bg-gray-700" data-tab="callbacks">
-                            Обратные звонки
-                        </button>
-                        <button onclick="switchAdminTab(&#39;filaments&#39;)" class="admin-tab px-4 py-2 rounded-lg hover:bg-gray-700" data-tab="filaments">
-                            Управление филаментами
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Admin Content -->
-            <div class="max-w-7xl mx-auto px-4 py-8">
-                <!-- Plastic Submissions Tab -->
-                <div id="admin-plastic" class="admin-tab-content">
-                    <h3 class="text-xl font-bold mb-4">Заявки на сдачу пластика</h3>
-                    <div id="admin-plastic-list" class="space-y-4"></div>
-                </div>
-                
-                <!-- Orders Tab -->
-                <div id="admin-orders" class="admin-tab-content hidden">
-                    <h3 class="text-xl font-bold mb-4">Заказы филамента</h3>
-                    <div id="admin-orders-list" class="space-y-4"></div>
-                </div>
-                
-                <!-- Callbacks Tab -->
-                <div id="admin-callbacks" class="admin-tab-content hidden">
-                    <h3 class="text-xl font-bold mb-4">Запросы обратного звонка</h3>
-                    <div id="admin-callbacks-list" class="space-y-4"></div>
-                </div>
-                
-                <!-- Filaments Management Tab -->
-                <div id="admin-filaments" class="admin-tab-content hidden">
-                    <h3 class="text-xl font-bold mb-4">Управление каталогом филаментов</h3>
-                    <div id="admin-filaments-list" class="space-y-4"></div>
-                </div>
+    <!-- Success Message -->
+    <div id="successMessage" class="hidden fixed bottom-8 right-8 bg-eco-primary text-white px-6 py-4 rounded-lg shadow-2xl z-50 max-w-sm">
+        <div class="flex items-center space-x-3">
+            <i class="fas fa-check-circle text-2xl"></i>
+            <div>
+                <div class="font-bold">Заявка отправлена!</div>
+                <div class="text-sm text-white/90">Мы свяжемся с вами в ближайшее время</div>
             </div>
         </div>
     </div>
 
     <script>
-        // Supabase Configuration
-        const SUPABASE_URL = 'https://udqguvtyteawsqmbudqg.backend.onspace.ai';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjIwNzk1NTkxNjEsImlhdCI6MTc2NDE5OTE2MSwiaXNzIjoib25zcGFjZSIsInJlZiI6InVkcWd1dnR5dGVhd3NxbWJ1ZHFnIiwicm9sZSI6ImFub24ifQ.joCPHxXzkP_v9COWsovXpQgPfqmyUfSKTpJOlmqMUE8';
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
         
-        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-            auth: {
-                flowType: 'pkce',
-                persistSession: true,
-                autoRefreshToken: true,
-                detectSessionInUrl: true
-            }
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
-
-        // Auth Manager
-        class AuthManager {
-            constructor() {
-                this.user = null;
-                this.isAuthInitialized = false;
-            }
-
-            async init() {
-                const { data: { session } } = await supabase.auth.getSession();
-                if (session?.user) {
-                    this.user = this.mapUser(session.user);
-                    this.onAuthSuccess();
-                } else {
-                    this.onAuthLogout();
-                }
-                this.isAuthInitialized = true;
-
-                supabase.auth.onAuthStateChange((event, session) => {
-                    if (event === 'SIGNED_IN' && session?.user) {
-                        this.user = this.mapUser(session.user);
-                        this.onAuthSuccess();
-                        if (!this.isAuthInitialized) {
-                            this.isAuthInitialized = true;
-                        }
-                    } else if (event === 'SIGNED_OUT') {
-                        this.user = null;
-                        this.onAuthLogout();
-                        if (!this.isAuthInitialized) {
-                            this.isAuthInitialized = true;
-                        }
-                    }
-                });
-            }
-
-            mapUser(user) {
-                return {
-                    id: user.id,
-                    email: user.email,
-                    name: user.user_metadata?.full_name || user.user_metadata?.name || user.email?.split('@')[0]
-                };
-            }
-
-            showAuthModal() {
-                document.getElementById('auth-modal').classList.add('active');
-            }
-
-            closeAuthModal() {
-                document.getElementById('auth-modal').classList.remove('active');
-                document.getElementById('auth-error').classList.add('hidden');
-            }
-
-            async login(email, password) {
-                const { error } = await supabase.auth.signInWithPassword({ email, password });
-                if (error) {
-                    this.showError(error.message);
-                    return false;
-                }
-                this.closeAuthModal();
-                return true;
-            }
-
-            async logout() {
-                const { error } = await supabase.auth.signOut();
-                if (error) {
-                    alert('Ошибка выхода: ' + error.message);
-                }
-            }
-
-            onAuthSuccess() {
-                document.getElementById('nav-auth-text').textContent = this.user.email;
-                document.getElementById('mobile-auth-text').textContent = this.user.email;
-                document.getElementById('admin-panel').classList.remove('hidden');
-                loadAdminData();
-            }
-
-            onAuthLogout() {
-                document.getElementById('nav-auth-text').textContent = 'Вход для администратора';
-                document.getElementById('mobile-auth-text').textContent = 'Вход для администратора';
-                document.getElementById('admin-panel').classList.add('hidden');
-            }
-
-            showError(message) {
-                const errorEl = document.getElementById('auth-error');
-                errorEl.textContent = message;
-                errorEl.classList.remove('hidden');
-            }
-        }
-
-        const authManager = new AuthManager();
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            authManager.init();
-            loadFilaments();
-            setupEventListeners();
+        
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
         });
-
-        function setupEventListeners() {
-            // Mobile menu toggle
-            document.getElementById('mobile-menu-btn').addEventListener('click', () => {
-                document.getElementById('mobile-menu').classList.toggle('hidden');
-            });
-
-            // Auth form
-            document.getElementById('auth-form').addEventListener('submit', async (e) => {
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const formData = new FormData(e.target);
-                await authManager.login(formData.get('email'), formData.get('password'));
-            });
-
-            // Plastic submission form
-            document.getElementById('plastic-form').addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const formData = new FormData(e.target);
-                
-                const { error } = await supabase.from('plastic_submissions').insert([{
-                    name: formData.get('name'),
-                    phone: formData.get('phone'),
-                    email: formData.get('email') || null,
-                    address: formData.get('address'),
-                    plastic_type: formData.get('plastic_type'),
-                    estimated_weight: formData.get('estimated_weight'),
-                    pickup_date: formData.get('pickup_date') || null,
-                    notes: formData.get('notes') || null
-                }]);
-
-                if (error) {
-                    alert('Ошибка: ' + error.message);
-                } else {
-                    alert('Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время.');
-                    e.target.reset();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
                 }
             });
-
-            // Callback form
-            document.getElementById('callback-form').addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const formData = new FormData(e.target);
-                
-                const { error } = await supabase.from('callback_requests').insert([{
-                    name: formData.get('name'),
-                    phone: formData.get('phone'),
-                    preferred_time: formData.get('preferred_time') || null,
-                    message: formData.get('message') || null
-                }]);
-
-                if (error) {
-                    alert('Ошибка: ' + error.message);
-                } else {
-                    alert('Спасибо! Мы перезвоним вам в ближайшее время.');
-                    e.target.reset();
-                }
-            });
-
-            // Order form
-            document.getElementById('order-form').addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const formData = new FormData(e.target);
-                const quantity = parseInt(formData.get('quantity'));
-                const filamentId = formData.get('filament_id');
-                
-                const { data: filament } = await supabase
-                    .from('filaments')
-                    .select('price')
-                    .eq('id', filamentId)
-                    .single();
-                
-                const totalPrice = filament.price * quantity;
-                
-                const { error } = await supabase.from('filament_orders').insert([{
-                    customer_name: formData.get('customer_name'),
-                    phone: formData.get('phone'),
-                    email: formData.get('email') || null,
-                    delivery_address: formData.get('delivery_address'),
-                    filament_id: filamentId,
-                    quantity: quantity,
-                    total_price: totalPrice,
-                    payment_method: formData.get('payment_method')
-                }]);
-
-                if (error) {
-                    alert('Ошибка: ' + error.message);
-                } else {
-                    alert('Спасибо за заказ! Мы свяжемся с вами для подтверждения.');
-                    closeOrderModal();
-                    e.target.reset();
-                }
-            });
+        });
+        
+        // Donate Form Submission
+        document.getElementById('donateForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            showSuccessMessage();
+            e.target.reset();
+        });
+        
+        // Order Product
+        function orderProduct(productName, price) {
+            document.getElementById('orderProduct').value = productName;
+            document.getElementById('orderPrice').value = price + ' ₸';
+            document.getElementById('orderModal').classList.remove('hidden');
         }
-
-        // Load filaments catalog
-        async function loadFilaments() {
-            const { data: filaments, error } = await supabase
-                .from('filaments')
-                .select('*')
-                .eq('is_available', true)
-                .order('created_at', { ascending: false });
-
-            if (error) {
-                console.error('Error loading filaments:', error);
-                return;
-            }
-
-            const grid = document.getElementById('filaments-grid');
-            grid.innerHTML = filaments.map(filament => `
-                <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition overflow-hidden">
-                    <div class="h-48 bg-gradient-to-br from-eco-100 to-eco-200 flex items-center justify-center">
-                        <div class="w-32 h-32 rounded-full" style="background: ${getColorGradient(filament.color)}"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">${filament.name}</h3>
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="px-3 py-1 bg-eco-100 text-eco-700 rounded-full text-sm font-semibold">${filament.color}</span>
-                            <span class="text-gray-600 text-sm">${filament.weight}</span>
-                        </div>
-                        <p class="text-gray-600 text-sm mb-4">${filament.description || ''}</p>
-                        <div class="flex items-center justify-between">
-                            <div class="text-2xl font-bold text-eco-600">${filament.price} ₸</div>
-                            <button onclick="openOrderModal('${filament.id}')" 
-                                    class="bg-eco-600 hover:bg-eco-700 text-white px-6 py-2 rounded-full font-semibold transition">
-                                Заказать
-                            </button>
-                        </div>
-                        <div class="mt-3 text-sm text-gray-500">
-                            В наличии: ${filament.stock} шт
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function getColorGradient(color) {
-            const gradients = {
-                'Зелёный': 'linear-gradient(135deg, #22c55e, #15803d)',
-                'Синий': 'linear-gradient(135deg, #3b82f6, #1e40af)',
-                'Красный': 'linear-gradient(135deg, #ef4444, #b91c1c)',
-                'Чёрный': 'linear-gradient(135deg, #374151, #111827)',
-                'Белый': 'linear-gradient(135deg, #f9fafb, #d1d5db)',
-                'Прозрачный': 'linear-gradient(135deg, rgba(255,255,255,0.8), rgba(200,200,200,0.5))'
-            };
-            return gradients[color] || 'linear-gradient(135deg, #9ca3af, #6b7280)';
-        }
-
-        // Order modal functions
-        let currentFilamentPrice = 0;
-
-        async function openOrderModal(filamentId) {
-            const { data: filament } = await supabase
-                .from('filaments')
-                .select('*')
-                .eq('id', filamentId)
-                .single();
-
-            if (!filament) return;
-
-            currentFilamentPrice = filament.price;
-            document.getElementById('order-filament-id').value = filament.id;
-            document.getElementById('order-filament-info').innerHTML = `
-                <h4 class="font-bold text-lg">${filament.name}</h4>
-                <p class="text-gray-600">${filament.color} • ${filament.weight} • ${filament.price} ₸</p>
-            `;
-            document.getElementById('order-quantity').value = 1;
-            updateOrderTotal();
-            document.getElementById('order-modal').classList.add('active');
-        }
-
+        
         function closeOrderModal() {
-            document.getElementById('order-modal').classList.remove('active');
+            document.getElementById('orderModal').classList.add('hidden');
         }
-
-        function updateOrderTotal() {
-            const quantity = parseInt(document.getElementById('order-quantity').value) || 1;
-            const total = currentFilamentPrice * quantity;
-            document.getElementById('order-total').textContent = total.toLocaleString() + ' ₸';
+        
+        // Order Form Submission
+        document.getElementById('orderForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            closeOrderModal();
+            showSuccessMessage();
+            e.target.reset();
+        });
+        
+        // Success Message
+        function showSuccessMessage() {
+            const successMsg = document.getElementById('successMessage');
+            successMsg.classList.remove('hidden');
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+            }, 5000);
         }
-
-        // Admin functions
-        function switchAdminTab(tab) {
-            document.querySelectorAll('.admin-tab').forEach(btn => {
-                btn.classList.remove('bg-eco-600');
-                btn.classList.add('hover:bg-gray-700');
-            });
-            document.querySelector(`[data-tab="${tab}"]`).classList.add('bg-eco-600');
-            document.querySelector(`[data-tab="${tab}"]`).classList.remove('hover:bg-gray-700');
-
-            document.querySelectorAll('.admin-tab-content').forEach(content => {
-                content.classList.add('hidden');
-            });
-            document.getElementById(`admin-${tab}`).classList.remove('hidden');
-        }
-
-        async function loadAdminData() {
-            await loadAdminPlastic();
-            await loadAdminOrders();
-            await loadAdminCallbacks();
-            await loadAdminFilaments();
-        }
-
-        async function loadAdminPlastic() {
-            const { data: submissions } = await supabase
-                .from('plastic_submissions')
-                .select('*')
-                .order('created_at', { ascending: false });
-
-            const list = document.getElementById('admin-plastic-list');
-            list.innerHTML = submissions.map(sub => `
-                <div class="bg-gray-800 rounded-xl p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <h4 class="font-bold text-lg">${sub.name}</h4>
-                            <p class="text-gray-400 text-sm">${sub.phone} ${sub.email ? '• ' + sub.email : ''}</p>
-                        </div>
-                        <span class="px-3 py-1 rounded-full text-sm ${getStatusClass(sub.status)}">
-                            ${getStatusText(sub.status)}
-                        </span>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4 text-sm mb-4">
-                        <div>
-                            <span class="text-gray-400">Адрес:</span>
-                            <p>${sub.address}</p>
-                        </div>
-                        <div>
-                            <span class="text-gray-400">Тип пластика:</span>
-                            <p>${sub.plastic_type}</p>
-                        </div>
-                        <div>
-                            <span class="text-gray-400">Вес:</span>
-                            <p>${sub.estimated_weight}</p>
-                        </div>
-                        <div>
-                            <span class="text-gray-400">Дата забора:</span>
-                            <p>${sub.pickup_date || 'Не указана'}</p>
-                        </div>
-                    </div>
-                    ${sub.notes ? `<p class="text-sm text-gray-300 mb-3"><strong>Заметки:</strong> ${sub.notes}</p>` : ''}
-                    ${sub.admin_notes ? `<p class="text-sm text-eco-400"><strong>Примечания администратора:</strong> ${sub.admin_notes}</p>` : ''}
-                    <div class="flex gap-2 mt-4">
-                        <select onchange="updateSubmissionStatus('${sub.id}', this.value)" class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm">
-                            <option value="pending" ${sub.status === 'pending' ? 'selected' : ''}>Ожидает</option>
-                            <option value="in_progress" ${sub.status === 'in_progress' ? 'selected' : ''}>В обработке</option>
-                            <option value="completed" ${sub.status === 'completed' ? 'selected' : ''}>Завершено</option>
-                        </select>
-                    </div>
-                    <p class="text-xs text-gray-500 mt-2">Создано: ${new Date(sub.created_at).toLocaleString('ru-RU')}</p>
-                </div>
-            `).join('');
-        }
-
-        async function loadAdminOrders() {
-            const { data: orders } = await supabase
-                .from('filament_orders')
-                .select('*, filaments(*)')
-                .order('created_at', { ascending: false });
-
-            const list = document.getElementById('admin-orders-list');
-            list.innerHTML = orders.map(order => `
-                <div class="bg-gray-800 rounded-xl p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <h4 class="font-bold text-lg">${order.customer_name}</h4>
-                            <p class="text-gray-400 text-sm">${order.phone} ${order.email ? '• ' + order.email : ''}</p>
-                        </div>
-                        <span class="px-3 py-1 rounded-full text-sm ${getStatusClass(order.status)}">
-                            ${getStatusText(order.status)}
-                        </span>
-                    </div>
-                    <div class="bg-gray-700 p-4 rounded-lg mb-4">
-                        <p class="font-semibold">${order.filaments.name}</p>
-                        <p class="text-sm text-gray-300">Количество: ${order.quantity} шт • Цена: ${order.total_price.toLocaleString()} ₸</p>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4 text-sm mb-4">
-                        <div>
-                            <span class="text-gray-400">Адрес доставки:</span>
-                            <p>${order.delivery_address}</p>
-                        </div>
-                        <div>
-                            <span class="text-gray-400">Способ оплаты:</span>
-                            <p>${order.payment_method || 'Не указан'}</p>
-                        </div>
-                    </div>
-                    ${order.admin_notes ? `<p class="text-sm text-eco-400"><strong>Примечания:</strong> ${order.admin_notes}</p>` : ''}
-                    <div class="flex gap-2 mt-4">
-                        <select onchange="updateOrderStatus('${order.id}', this.value)" class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm">
-                            <option value="pending" ${order.status === 'pending' ? 'selected' : ''}>Ожидает</option>
-                            <option value="in_progress" ${order.status === 'in_progress' ? 'selected' : ''}>В обработке</option>
-                            <option value="completed" ${order.status === 'completed' ? 'selected' : ''}>Завершено</option>
-                        </select>
-                    </div>
-                    <p class="text-xs text-gray-500 mt-2">Создано: ${new Date(order.created_at).toLocaleString('ru-RU')}</p>
-                </div>
-            `).join('');
-        }
-
-        async function loadAdminCallbacks() {
-            const { data: callbacks } = await supabase
-                .from('callback_requests')
-                .select('*')
-                .order('created_at', { ascending: false });
-
-            const list = document.getElementById('admin-callbacks-list');
-            list.innerHTML = callbacks.map(cb => `
-                <div class="bg-gray-800 rounded-xl p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <h4 class="font-bold text-lg">${cb.name}</h4>
-                            <p class="text-gray-400 text-sm">${cb.phone}</p>
-                        </div>
-                        <span class="px-3 py-1 rounded-full text-sm ${getStatusClass(cb.status)}">
-                            ${getStatusText(cb.status)}
-                        </span>
-                    </div>
-                    ${cb.preferred_time ? `<p class="text-sm mb-2"><strong>Удобное время:</strong> ${cb.preferred_time}</p>` : ''}
-                    ${cb.message ? `<p class="text-sm text-gray-300 mb-3"><strong>Сообщение:</strong> ${cb.message}</p>` : ''}
-                    ${cb.admin_notes ? `<p class="text-sm text-eco-400"><strong>Примечания:</strong> ${cb.admin_notes}</p>` : ''}
-                    <div class="flex gap-2 mt-4">
-                        <select onchange="updateCallbackStatus('${cb.id}', this.value)" class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm">
-                            <option value="pending" ${cb.status === 'pending' ? 'selected' : ''}>Ожидает</option>
-                            <option value="in_progress" ${cb.status === 'in_progress' ? 'selected' : ''}>В обработке</option>
-                            <option value="completed" ${cb.status === 'completed' ? 'selected' : ''}>Завершено</option>
-                        </select>
-                    </div>
-                    <p class="text-xs text-gray-500 mt-2">Создано: ${new Date(cb.created_at).toLocaleString('ru-RU')}</p>
-                </div>
-            `).join('');
-        }
-
-        async function loadAdminFilaments() {
-            const { data: filaments } = await supabase
-                .from('filaments')
-                .select('*')
-                .order('created_at', { ascending: false });
-
-            const list = document.getElementById('admin-filaments-list');
-            list.innerHTML = filaments.map(fil => `
-                <div class="bg-gray-800 rounded-xl p-6">
-                    <div class="flex justify-between items-start">
-                        <div class="flex-1">
-                            <h4 class="font-bold text-lg">${fil.name}</h4>
-                            <p class="text-gray-400 text-sm mb-3">${fil.color} • ${fil.weight} • ${fil.price} ₸</p>
-                            <p class="text-sm text-gray-300 mb-2">${fil.description || ''}</p>
-                            <p class="text-sm">Склад: ${fil.stock} шт</p>
-                            <p class="text-sm">Статус: ${fil.is_available ? '✅ Доступен' : '❌ Недоступен'}</p>
-                        </div>
-                        <div>
-                            <label class="flex items-center cursor-pointer">
-                                <input type="checkbox" ${fil.is_available ? 'checked' : ''} 
-                                       onchange="toggleFilamentAvailability('${fil.id}', this.checked)"
-                                       class="mr-2">
-                                <span class="text-sm">Показывать</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        async function updateSubmissionStatus(id, status) {
-            const { error } = await supabase
-                .from('plastic_submissions')
-                .update({ status })
-                .eq('id', id);
-            
-            if (error) alert('Ошибка: ' + error.message);
-        }
-
-        async function updateOrderStatus(id, status) {
-            const { error } = await supabase
-                .from('filament_orders')
-                .update({ status })
-                .eq('id', id);
-            
-            if (error) alert('Ошибка: ' + error.message);
-        }
-
-        async function updateCallbackStatus(id, status) {
-            const { error } = await supabase
-                .from('callback_requests')
-                .update({ status })
-                .eq('id', id);
-            
-            if (error) alert('Ошибка: ' + error.message);
-        }
-
-        async function toggleFilamentAvailability(id, isAvailable) {
-            const { error } = await supabase
-                .from('filaments')
-                .update({ is_available: isAvailable })
-                .eq('id', id);
-            
-            if (error) {
-                alert('Ошибка: ' + error.message);
-            } else {
-                loadFilaments();
+        
+        // Close modal on outside click
+        document.getElementById('orderModal').addEventListener('click', (e) => {
+            if (e.target.id === 'orderModal') {
+                closeOrderModal();
             }
-        }
-
-        function getStatusClass(status) {
-            const classes = {
-                'pending': 'bg-yellow-600 text-white',
-                'in_progress': 'bg-blue-600 text-white',
-                'completed': 'bg-green-600 text-white'
-            };
-            return classes[status] || 'bg-gray-600 text-white';
-        }
-
-        function getStatusText(status) {
-            const texts = {
-                'pending': 'Ожидает',
-                'in_progress': 'В обработке',
-                'completed': 'Завершено'
-            };
-            return texts[status] || status;
-        }
-
-        function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        }
+        });
+        
+        // Navbar scroll effect
+        let lastScroll = 0;
+        const navbar = document.querySelector('nav');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.classList.add('shadow-xl');
+            } else {
+                navbar.classList.remove('shadow-xl');
+            }
+            
+            lastScroll = currentScroll;
+        });
     </script>
-<script>window.onload=function(){var d=document.createElement("div");d.id="aionspaceLoadFinished";document.body.appendChild(d);};</script>
+
+
 
 </body></html>
